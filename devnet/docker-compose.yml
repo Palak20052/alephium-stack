@@ -27,7 +27,7 @@ services:
       POSTGRES_DB: ${POSTGRES_DB:-explorer}
       PGDATA: /data/postgres
     ports:
-      - '127.0.0.1:19974:5432'
+      - '127.0.0.1:19975:5432'
     restart: unless-stopped
     healthcheck:
       test: ['CMD', 'pg_isready', '-q', '-d', 'postgres', '-U', 'postgres']
@@ -44,7 +44,7 @@ services:
       PGADMIN_CONFIG_SERVER_MODE: 'False'
 
     ports:
-      - '${PGADMIN_PORT:-5050}:80'
+      - '${PGADMIN_PORT:-5051}:80'
     restart: unless-stopped
 
   explorer-backend:
